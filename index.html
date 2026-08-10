@@ -1,0 +1,528 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="중대재해처벌법 대응을 위한 현장 안전관리 문서의 디지털 전환을 소개합니다.">
+  <title>중대재해처벌법 대응을 위한 현장 안전관리 디지털화 | eformsign</title>
+  <style>
+    :root {
+      --navy: #0b1f3a;
+      --navy-2: #17365f;
+      --blue: #1769e0;
+      --sky: #eaf3ff;
+      --mint: #21b49a;
+      --ink: #142033;
+      --muted: #5d6b7e;
+      --line: #dfe7f1;
+      --surface: #f6f8fb;
+      --white: #fff;
+      --shadow: 0 18px 50px rgba(16, 38, 70, .10);
+      --radius: 22px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--white);
+      font-family: Pretendard, "Noto Sans KR", "Apple SD Gothic Neo", Arial, sans-serif;
+      line-height: 1.65;
+      word-break: keep-all;
+    }
+    a { color: inherit; text-decoration: none; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    .container { width: min(1120px, calc(100% - 40px)); margin: 0 auto; }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin: 0 0 16px;
+      color: var(--blue);
+      font-size: 14px;
+      font-weight: 800;
+      letter-spacing: -.01em;
+    }
+    .eyebrow::before {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--mint);
+      content: "";
+    }
+    h1, h2, h3, p { margin-top: 0; }
+    h1 {
+      margin-bottom: 24px;
+      font-size: clamp(38px, 5.2vw, 68px);
+      line-height: 1.12;
+      letter-spacing: -.055em;
+    }
+    h2 {
+      margin-bottom: 18px;
+      font-size: clamp(30px, 3.6vw, 46px);
+      line-height: 1.2;
+      letter-spacing: -.04em;
+    }
+    h3 { margin-bottom: 9px; font-size: 19px; line-height: 1.35; letter-spacing: -.02em; }
+    .lead { color: var(--muted); font-size: clamp(17px, 2vw, 21px); }
+    .section-head { max-width: 720px; margin-bottom: 42px; }
+    .section-head p { margin-bottom: 0; color: var(--muted); font-size: 17px; }
+    section { padding: 100px 0; }
+
+    .nav {
+      position: absolute;
+      z-index: 10;
+      top: 0; left: 0;
+      width: 100%;
+      padding: 24px 0;
+      color: var(--white);
+    }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; }
+    .brand { display: flex; align-items: center; gap: 11px; font-weight: 900; letter-spacing: -.03em; }
+    .brand-mark {
+      display: grid;
+      width: 36px; height: 36px;
+      place-items: center;
+      border: 1px solid rgba(255,255,255,.32);
+      border-radius: 11px;
+      background: rgba(255,255,255,.12);
+      font-size: 18px;
+    }
+    .nav-link { color: rgba(255,255,255,.82); font-size: 14px; font-weight: 700; }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      min-height: 760px;
+      padding: 170px 0 110px;
+      color: var(--white);
+      background:
+        radial-gradient(circle at 82% 22%, rgba(38, 151, 255, .30), transparent 27%),
+        radial-gradient(circle at 70% 82%, rgba(33, 180, 154, .18), transparent 25%),
+        linear-gradient(135deg, #07162b 0%, #0c2950 62%, #123f76 100%);
+    }
+    .hero::after {
+      position: absolute;
+      right: -120px; bottom: -230px;
+      width: 620px; height: 620px;
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 50%;
+      box-shadow: 0 0 0 90px rgba(255,255,255,.025), 0 0 0 180px rgba(255,255,255,.018);
+      content: "";
+    }
+    .hero-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1.18fr .82fr;
+      gap: 70px;
+      align-items: center;
+    }
+    .hero .eyebrow { color: #8fcbff; }
+    .hero .lead { max-width: 680px; color: rgba(255,255,255,.72); }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 34px; }
+    .btn {
+      display: inline-flex;
+      min-height: 52px;
+      align-items: center;
+      justify-content: center;
+      padding: 0 24px;
+      border: 1px solid transparent;
+      border-radius: 12px;
+      font-weight: 800;
+      transition: transform .2s, background .2s;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary { color: var(--white); background: var(--blue); box-shadow: 0 12px 28px rgba(23,105,224,.28); }
+    .hero .btn-primary { color: var(--navy); background: var(--white); box-shadow: none; }
+    .btn-ghost { border-color: rgba(255,255,255,.25); color: var(--white); background: rgba(255,255,255,.06); }
+    .hero-note { margin-top: 20px; color: rgba(255,255,255,.5); font-size: 13px; }
+    .dashboard {
+      position: relative;
+      padding: 28px;
+      border: 1px solid rgba(255,255,255,.17);
+      border-radius: 28px;
+      background: rgba(255,255,255,.095);
+      box-shadow: 0 34px 80px rgba(0,0,0,.22);
+      backdrop-filter: blur(12px);
+    }
+    .dash-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 24px; }
+    .dash-title { font-size: 14px; font-weight: 800; }
+    .status {
+      display: inline-flex; align-items: center; gap: 7px;
+      padding: 7px 10px;
+      border-radius: 999px;
+      color: #9df1dc;
+      background: rgba(33,180,154,.15);
+      font-size: 12px; font-weight: 800;
+    }
+    .status::before { width: 7px; height: 7px; border-radius: 50%; background: #4ee0bd; content: ""; }
+    .dash-list { display: grid; gap: 12px; }
+    .dash-item {
+      display: grid;
+      grid-template-columns: 44px 1fr auto;
+      gap: 13px;
+      align-items: center;
+      padding: 15px;
+      border-radius: 15px;
+      background: rgba(255,255,255,.92);
+      color: var(--ink);
+    }
+    .dash-icon, .icon {
+      display: grid;
+      place-items: center;
+      width: 44px; height: 44px;
+      border-radius: 13px;
+      color: var(--blue);
+      background: var(--sky);
+      font-weight: 900;
+    }
+    .dash-item strong { display: block; font-size: 14px; }
+    .dash-item span { color: var(--muted); font-size: 11px; }
+    .check { color: var(--mint); font-size: 19px; font-weight: 900; }
+
+    .feature-bar {
+      position: relative;
+      z-index: 2;
+      margin-top: -50px;
+    }
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--white);
+      box-shadow: var(--shadow);
+    }
+    .feature {
+      padding: 30px 26px;
+      border-right: 1px solid var(--line);
+    }
+    .feature:last-child { border-right: 0; }
+    .feature .icon { margin-bottom: 18px; }
+    .feature p { margin-bottom: 0; color: var(--muted); font-size: 14px; }
+
+    .docs { background: var(--surface); }
+    .card-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .card {
+      min-height: 154px;
+      padding: 25px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: var(--white);
+      transition: transform .2s, box-shadow .2s, border-color .2s;
+    }
+    .card:hover { transform: translateY(-3px); border-color: #bfd6f5; box-shadow: 0 14px 34px rgba(17,44,82,.08); }
+    .card .num { display: block; margin-bottom: 20px; color: var(--blue); font-size: 13px; font-weight: 900; }
+    .card p { margin-bottom: 0; color: var(--muted); font-size: 14px; }
+
+    .industry-wrap { display: grid; grid-template-columns: .78fr 1.22fr; gap: 72px; align-items: start; }
+    .industry-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+    .industry {
+      display: flex; align-items: center; gap: 13px;
+      min-height: 68px;
+      padding: 0 18px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--white);
+      font-weight: 800;
+    }
+    .industry i {
+      width: 10px; height: 10px;
+      border-radius: 3px;
+      background: var(--blue);
+      box-shadow: 0 0 0 5px var(--sky);
+    }
+
+    .benefits {
+      color: var(--white);
+      background: var(--navy);
+    }
+    .benefits .eyebrow { color: #8fcbff; }
+    .benefits .section-head p { color: rgba(255,255,255,.65); }
+    .benefit-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+    .benefit {
+      padding: 25px;
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 17px;
+      background: rgba(255,255,255,.055);
+    }
+    .benefit .tick { display: block; margin-bottom: 25px; color: #65e5c7; font-size: 22px; font-weight: 900; }
+    .benefit p { margin-bottom: 0; color: rgba(255,255,255,.6); font-size: 14px; }
+
+    .capabilities { background: linear-gradient(180deg, #fff, #f4f8fd); }
+    .capability-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .capability {
+      display: flex; gap: 16px;
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: var(--white);
+    }
+    .capability .icon { flex: 0 0 42px; width: 42px; height: 42px; }
+    .capability p { margin-bottom: 0; color: var(--muted); font-size: 13px; }
+
+    .campaign-box {
+      display: grid;
+      grid-template-columns: .92fr 1.08fr;
+      gap: 64px;
+      align-items: center;
+      padding: 58px;
+      border: 1px solid #cfe0f8;
+      border-radius: 28px;
+      background: linear-gradient(135deg, #edf5ff, #f5fbfa);
+    }
+    .campaign-box h2 { font-size: clamp(28px, 3.4vw, 42px); }
+    .campaign-box p { color: var(--muted); }
+    .campaign-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+    .campaign-item {
+      display: flex; align-items: center; gap: 12px;
+      min-height: 62px;
+      padding: 0 16px;
+      border: 1px solid rgba(23,105,224,.14);
+      border-radius: 13px;
+      background: rgba(255,255,255,.72);
+      font-size: 14px;
+      font-weight: 800;
+    }
+    .campaign-item::before { color: var(--blue); content: "✓"; font-weight: 900; }
+
+    .cta { padding: 110px 0; text-align: center; }
+    .cta-inner {
+      position: relative;
+      overflow: hidden;
+      padding: 76px 34px;
+      border-radius: 30px;
+      color: var(--white);
+      background: linear-gradient(135deg, #11376a, #1769e0);
+      box-shadow: 0 24px 60px rgba(23,105,224,.22);
+    }
+    .cta-inner::before, .cta-inner::after {
+      position: absolute;
+      border: 1px solid rgba(255,255,255,.13);
+      border-radius: 50%;
+      content: "";
+    }
+    .cta-inner::before { top: -170px; left: -100px; width: 360px; height: 360px; }
+    .cta-inner::after { right: -100px; bottom: -210px; width: 420px; height: 420px; }
+    .cta-content { position: relative; z-index: 1; max-width: 720px; margin: 0 auto; }
+    .cta h2 { margin-bottom: 18px; }
+    .cta p { margin-bottom: 30px; color: rgba(255,255,255,.72); font-size: 17px; }
+    .cta .btn { color: var(--blue); background: var(--white); }
+    footer { padding: 28px 0 38px; color: #7a8799; text-align: center; font-size: 12px; }
+
+    @media (max-width: 900px) {
+      section { padding: 78px 0; }
+      .hero { min-height: auto; padding-top: 145px; }
+      .hero-grid, .industry-wrap, .campaign-box { grid-template-columns: 1fr; }
+      .hero-grid { gap: 46px; }
+      .dashboard { max-width: 620px; }
+      .feature-grid { grid-template-columns: repeat(2, 1fr); }
+      .feature:nth-child(2) { border-right: 0; }
+      .feature:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
+      .card-grid, .capability-grid { grid-template-columns: repeat(2, 1fr); }
+      .benefit-grid { grid-template-columns: repeat(2, 1fr); }
+      .campaign-box { gap: 36px; padding: 42px; }
+    }
+    @media (max-width: 600px) {
+      .container { width: min(100% - 28px, 1120px); }
+      .nav-link { display: none; }
+      .hero { padding: 125px 0 90px; }
+      h1 { font-size: 42px; }
+      .hero-actions { flex-direction: column; }
+      .hero-actions .btn { width: 100%; }
+      .dashboard { padding: 18px; border-radius: 21px; }
+      .dash-item { grid-template-columns: 39px 1fr auto; padding: 12px; }
+      .dash-icon { width: 39px; height: 39px; }
+      .feature-bar { margin-top: -34px; }
+      .feature-grid, .card-grid, .industry-list, .benefit-grid, .capability-grid, .campaign-list { grid-template-columns: 1fr; }
+      .feature { border-right: 0; border-bottom: 1px solid var(--line); }
+      .feature:nth-child(3) { border-bottom: 1px solid var(--line); }
+      .feature:last-child { border-bottom: 0; }
+      .card { min-height: 0; }
+      .campaign-box { padding: 30px 23px; }
+      .cta-inner { padding: 58px 22px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <nav class="nav" aria-label="주요 메뉴">
+      <div class="container nav-inner">
+        <a class="brand" href="#top" aria-label="eformsign 프로모션 홈">
+          <span class="brand-mark">e</span>
+          <span>eformsign</span>
+        </a>
+        <a class="nav-link" href="#contact">도입·협업 문의</a>
+      </div>
+    </nav>
+    <div class="container hero-grid" id="top">
+      <div>
+        <p class="eyebrow">중대재해처벌법 대응을 위한 현장 안전관리 디지털화</p>
+        <h1>현장 안전관리,<br>아직도 종이로<br>관리하고 계십니까?</h1>
+        <p class="lead">현장의 안전점검 문서를 모바일로 작성하고 전자서명부터 보관, 이력 확인까지 한 흐름으로 관리해 보세요.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#contact">도입·협업 문의하기</a>
+          <a class="btn btn-ghost" href="#documents">활용 문서 살펴보기</a>
+        </div>
+        <p class="hero-note">※ 실제 적용 범위와 운영 방식은 조직의 안전관리 체계 및 관련 규정에 따라 검토가 필요합니다.</p>
+      </div>
+      <div class="dashboard" aria-label="전자 안전문서 관리 예시">
+        <div class="dash-top">
+          <span class="dash-title">오늘의 안전문서</span>
+          <span class="status">운영 중</span>
+        </div>
+        <div class="dash-list">
+          <div class="dash-item">
+            <span class="dash-icon">TBM</span>
+            <div><strong>작업 전 TBM 일지</strong><span>현장 A · 작성 완료</span></div>
+            <b class="check">✓</b>
+          </div>
+          <div class="dash-item">
+            <span class="dash-icon">01</span>
+            <div><strong>위험성평가서</strong><span>물류센터 · 검토 완료</span></div>
+            <b class="check">✓</b>
+          </div>
+          <div class="dash-item">
+            <span class="dash-icon">02</span>
+            <div><strong>작업허가서</strong><span>생산 2팀 · 전자서명 완료</span></div>
+            <b class="check">✓</b>
+          </div>
+          <div class="dash-item">
+            <span class="dash-icon">03</span>
+            <div><strong>폭염 안전점검일지</strong><span>옥외 현장 · 자동 보관</span></div>
+            <b class="check">✓</b>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="feature-bar">
+      <div class="container feature-grid">
+        <article class="feature"><span class="icon">M</span><h3>모바일 작성</h3><p>현장에서 필요한 문서를 모바일로 바로 작성합니다.</p></article>
+        <article class="feature"><span class="icon">S</span><h3>전자서명</h3><p>참여자 확인과 서명 절차를 문서 안에서 진행합니다.</p></article>
+        <article class="feature"><span class="icon">A</span><h3>자동보관</h3><p>완료된 문서를 체계적으로 보관하고 검색합니다.</p></article>
+        <article class="feature"><span class="icon">H</span><h3>감사이력 관리</h3><p>작성·서명·완료 이력을 확인해 관리 근거를 남깁니다.</p></article>
+      </div>
+    </div>
+
+    <section class="docs" id="documents">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">SAFETY DOCUMENTS</p>
+          <h2>현장에서 사용하는 다양한 안전문서를 디지털로</h2>
+          <p>기존 서식을 바탕으로 업무 특성과 승인 절차에 맞는 전자문서 흐름을 구성할 수 있습니다.</p>
+        </div>
+        <div class="card-grid">
+          <article class="card"><span class="num">01</span><h3>폭염 안전점검일지</h3><p>온열질환 예방조치와 현장 점검 내용을 기록합니다.</p></article>
+          <article class="card"><span class="num">02</span><h3>TBM 일지</h3><p>작업 전 위험요인과 안전수칙 공유 내용을 남깁니다.</p></article>
+          <article class="card"><span class="num">03</span><h3>작업 전 안전점검</h3><p>설비·보호구·작업환경의 점검 결과를 관리합니다.</p></article>
+          <article class="card"><span class="num">04</span><h3>위험성평가</h3><p>유해·위험요인과 개선조치 내용을 체계화합니다.</p></article>
+          <article class="card"><span class="num">05</span><h3>보호구 지급대장</h3><p>보호구 지급 내역과 수령 확인을 함께 관리합니다.</p></article>
+          <article class="card"><span class="num">06</span><h3>교육 참석부</h3><p>교육 내용과 참석자 확인·서명 이력을 남깁니다.</p></article>
+          <article class="card"><span class="num">07</span><h3>작업허가서</h3><p>작업 조건 확인부터 승인까지 전자화합니다.</p></article>
+          <article class="card"><span class="num">08</span><h3>사고보고서</h3><p>사고 개요와 조치사항, 첨부자료를 한 문서로 관리합니다.</p></article>
+          <article class="card"><span class="num">09</span><h3>안전서약서</h3><p>안전수칙 확인과 서약 내용을 전자서명으로 남깁니다.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container industry-wrap">
+        <div>
+          <p class="eyebrow">RECOMMENDED INDUSTRIES</p>
+          <h2>현장 중심 산업의 안전관리 업무에 적합합니다</h2>
+          <p class="lead">여러 현장과 참여자가 함께 움직이는 조직일수록 문서 작성·회수·보관 과정을 간소화할 수 있습니다.</p>
+        </div>
+        <div class="industry-list" aria-label="추천 업종">
+          <div class="industry"><i></i>건설</div>
+          <div class="industry"><i></i>제조</div>
+          <div class="industry"><i></i>물류센터</div>
+          <div class="industry"><i></i>조선</div>
+          <div class="industry"><i></i>플랜트</div>
+          <div class="industry"><i></i>공공기관</div>
+          <div class="industry"><i></i>시설관리</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="benefits">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">EXPECTED BENEFITS</p>
+          <h2>기록은 간편하게,<br>관리는 더 체계적으로</h2>
+          <p>안전관리 기록의 누락과 분산을 줄이고, 필요한 문서를 신속하게 확인할 수 있는 기반을 마련합니다.</p>
+        </div>
+        <div class="benefit-grid">
+          <article class="benefit"><span class="tick">✓</span><h3>종이 업무 축소</h3><p>출력·배포·회수에 드는 반복 업무를 줄입니다.</p></article>
+          <article class="benefit"><span class="tick">✓</span><h3>현장 즉시 작성</h3><p>장소에 구애받지 않고 모바일로 기록합니다.</p></article>
+          <article class="benefit"><span class="tick">✓</span><h3>관리자 확인</h3><p>작성 현황과 완료 문서를 빠르게 파악합니다.</p></article>
+          <article class="benefit"><span class="tick">✓</span><h3>문서 분실 방지</h3><p>완료 문서를 디지털로 모아 체계적으로 보관합니다.</p></article>
+          <article class="benefit"><span class="tick">✓</span><h3>증빙 자료 확보</h3><p>작성·서명 이력을 안전관리 활동의 근거로 활용합니다.</p></article>
+          <article class="benefit"><span class="tick">✓</span><h3>점검·감사 대응</h3><p>필요한 기록을 검색하고 신속하게 확인합니다.</p></article>
+          <article class="benefit"><span class="tick">✓</span><h3>관리체계 지원</h3><p>조직의 중대재해 예방·대응 프로세스 운영을 지원합니다.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="capabilities">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">WITH EFORMSIGN</p>
+          <h2>eformsign으로 가능한 것</h2>
+          <p>작성부터 완료 문서 생성, 기존 시스템 연계까지 업무 환경에 맞게 활용할 수 있습니다.</p>
+        </div>
+        <div class="capability-grid">
+          <article class="capability"><span class="icon">M</span><div><h3>모바일 작성</h3><p>스마트폰·태블릿에서 문서 작성</p></div></article>
+          <article class="capability"><span class="icon">QR</span><div><h3>QR 접속</h3><p>QR 코드를 통한 간편한 문서 접근</p></div></article>
+          <article class="capability"><span class="icon">S</span><div><h3>전자서명</h3><p>확인과 승인 절차를 문서 안에서 진행</p></div></article>
+          <article class="capability"><span class="icon">P</span><div><h3>사진 첨부</h3><p>현장 사진과 관련 자료 첨부</p></div></article>
+          <article class="capability"><span class="icon">G</span><div><h3>위치정보 활용</h3><p>필요 시 GPS 기반 위치정보 기록</p></div></article>
+          <article class="capability"><span class="icon">PDF</span><div><h3>PDF 자동 생성</h3><p>완료 문서를 PDF로 생성·보관</p></div></article>
+          <article class="capability"><span class="icon">API</span><div><h3>API 연동</h3><p>기존 업무 시스템과 데이터 연계</p></div></article>
+          <article class="capability"><span class="icon">ERP</span><div><h3>ERP·MES 연계</h3><p>사내 시스템 환경에 맞춘 연계 검토</p></div></article>
+          <article class="capability"><span class="icon">EHS</span><div><h3>안전 플랫폼 연동</h3><p>안전관리 서비스와의 보완적 연계 검토</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container campaign-box">
+        <div>
+          <p class="eyebrow">FOR ASSOCIATIONS</p>
+          <h2>회원사의 안전관리 디지털 전환을 위한 공동 캠페인</h2>
+          <p>협회의 회원 네트워크와 eformsign의 전자문서 역량을 결합해, 산업 특성에 맞는 안내·교육·프로모션 방안을 함께 검토합니다.</p>
+          <a class="btn btn-primary" href="#contact">공동 캠페인 문의</a>
+        </div>
+        <div class="campaign-list" aria-label="공동 캠페인 예시">
+          <div class="campaign-item">회원사 대상 무료 웨비나</div>
+          <div class="campaign-item">협회 뉴스레터 게재</div>
+          <div class="campaign-item">홈페이지 배너</div>
+          <div class="campaign-item">회원사 특별 프로모션</div>
+          <div class="campaign-item">공동 세미나</div>
+          <div class="campaign-item">안전관리 교육자료 제공</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta" id="contact">
+      <div class="container">
+        <div class="cta-inner">
+          <div class="cta-content">
+            <h2>우리 현장에 맞는 안전문서 디지털화,<br>함께 검토해 보세요</h2>
+            <p>현재 사용 중인 안전관리 서식과 업무 절차를 바탕으로 적용 가능 범위와 운영 방안을 안내해 드립니다.</p>
+            <a class="btn" href="mailto:contact@example.com?subject=%EC%A4%91%EB%8C%80%EC%9E%AC%ED%95%B4%EC%B2%98%EB%B2%8C%EB%B2%95%20%EB%8C%80%EC%9D%91%20%ED%98%84%EC%9E%A5%20%EC%95%88%EC%A0%84%EA%B4%80%EB%A6%AC%20%EB%AC%B8%EC%9D%98">문의 메일 보내기</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">본 페이지는 현장 안전관리 문서의 디지털화 활용 방안을 소개하기 위한 프로모션 시안입니다. 법률 자문 또는 법적 의무 이행을 보장하는 자료가 아닙니다.</div>
+  </footer>
+</body>
+</html>
