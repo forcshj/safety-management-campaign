@@ -1,0 +1,2 @@
+let loading;
+export function loadSdk(){return loading??=(async()=>{for(const src of ['https://www.eformsign.com/plugins/jquery/jquery.min.js','https://www.eformsign.com/lib/js/efs_embedded_v2.js'])await new Promise((resolve,reject)=>{const s=document.createElement('script');s.src=src;s.onload=resolve;s.onerror=()=>reject(Error('eformsign 라이브러리를 불러올 수 없습니다. 네트워크 연결을 확인하세요.'));document.head.append(s);});if(typeof window.EformSignDocument!=='function')throw Error('임베딩 라이브러리가 준비되지 않았습니다.');})();}

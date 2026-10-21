@@ -1,0 +1,7 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>전자문서 시연</title><style>body{margin:0;font-family:sans-serif}p{padding:10px}iframe{width:100%;height:90vh;border:0}</style></head><body><p id="status" role="status">전자문서를 준비하는 중입니다.</p><iframe id="eformsign_iframe" name="eformsign_iframe" title="전자문서 작성"></iframe><script type="module">
+import{loadSdk}from'./sdk.js';
+let started=false;
+const send=data=>window.opener?.postMessage(data,location.origin);
+window.addEventListener('message',async event=>{if(event.origin!==location.origin||event.source!==window.opener||event.data?.type!=='OPEN_TEMPLATE'||started)return;started=true;try{await loadSdk();const efs=new EformSignDocument();efs.document(event.data.option,'eformsign_iframe',res=>{send({type:'DOC_RESULT',result:res});document.getElementById('status').textContent='문서 처리 결과를 원래 화면으로 전달했습니다. 이 창을 닫아도 됩니다.';},err=>{send({type:'DOC_ERROR',message:err.message||'문서 처리 오류'});document.getElementById('status').textContent='문서 처리 오류가 발생했습니다.';});efs.open();document.getElementById('status').textContent='로그인 후 문서를 작성하세요.';}catch(e){send({type:'DOC_ERROR',message:e.message});document.getElementById('status').textContent=e.message;}});
+if(window.opener)send({type:'READY_TEMPLATE'});else document.getElementById('status').textContent='시연 도구에서 전자문서 실행을 눌러 열어주세요.';
+</script></body></html>

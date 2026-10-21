@@ -1,0 +1,2447 @@
+{
+  "version": 1,
+  "companyId": "dbb087efd4344a94810e2ba510a9b517",
+  "countryCode": "kr",
+  "memberId": "",
+  "scenarios": [
+    {
+      "id": "scenario-0",
+      "label": "3-1 · APW / 법인사업자-대표자 / 비대면",
+      "templateId": "6e0bfaf7b13d4f4ca8565f93ece4d49d",
+      "fields": [
+        {
+          "id": "견적 유형",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "시스템 설정 코드",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "고객명",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "고객코드",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "우편번호",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "고객주소1",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "서비스제공처명",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "서비스제공처 형태",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "이름(마스터)",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "휴대전화번호(마스터)",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "서비스제공처우편번호",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "서비스제공처주소1",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "서비스제공처주소2",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "서비스제공처주소3",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "견적번호",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "견적구분",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "견적상태",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "주장치코드",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "오퍼링",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "오퍼링_2",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "오퍼링_3",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "오퍼링_4",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "오퍼링_5",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "카드 매수",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "계약서종류",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "계약기간",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "통신회선",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "출동료",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "방범서비스(대인)",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "방범서비스(대물)",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "스페셜보험",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "정전안심",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "화재안심",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "이웃배상",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "매출안심",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "영상도난손해",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "풍수재보험",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "신청금",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "월 서비스료",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "견적 설치비용",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "계약 설치비용",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "할인된 설치비용",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "기존 계약의 할인된 설치비용",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "설치 착수 예정일",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "서비스 개시 예정일",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "개인정보 수집 동의 (필수 항목)",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "마케팅 활용 동의",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "광고정보 수신 동의",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "제3자 제공 동의 (삼성화재)",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "제3자 제공 동의 (엘지유플러스)",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "제3자 제공 동의 확인",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "청구방식(카드결제)",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "청구방식(자동이체)",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "은행명(카드사)",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "예금주(카드주)",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "계좌(카드)번호",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "생년월일(사업자번호)",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "카드유효기간",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "자동(카드)이체일",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "청구서 수령 방법",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "E-mail(마스터)",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "전자 세금계산서 Site",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "세금계산서 E-mail",
+          "value": "",
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "id": "scenario-1",
+      "label": "3-1 · APW / 법인사업자-대리인 / 비대면",
+      "templateId": "52f5ccd079d745598636176ca3edaf42",
+      "fields": [
+        {
+          "id": "견적 유형",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "시스템 설정 코드",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "고객명",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "고객코드",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "우편번호",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "고객주소1",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "서비스제공처명",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "서비스제공처 형태",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "이름(마스터)",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "휴대전화번호(마스터)",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "서비스제공처우편번호",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "서비스제공처주소1",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "서비스제공처주소2",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "서비스제공처주소3",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "견적번호",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "견적구분",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "견적상태",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "주장치코드",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "오퍼링",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "오퍼링_2",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "오퍼링_3",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "오퍼링_4",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "오퍼링_5",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "카드 매수",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "계약서종류",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "계약기간",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "통신회선",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "출동료",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "방범서비스(대인)",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "방범서비스(대물)",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "스페셜보험",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "정전안심",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "화재안심",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "이웃배상",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "매출안심",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "영상도난손해",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "풍수재보험",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "신청금",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "월 서비스료",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "견적 설치비용",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "계약 설치비용",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "할인된 설치비용",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "기존 계약의 할인된 설치비용",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "설치 착수 예정일",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "서비스 개시 예정일",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "개인정보 수집 동의 (필수 항목)",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "마케팅 활용 동의",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "광고정보 수신 동의",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "제3자 제공 동의 (삼성화재)",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "제3자 제공 동의 (엘지유플러스)",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "제3자 제공 동의 확인",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "청구방식(카드결제)",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "청구방식(자동이체)",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "은행명(카드사)",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "예금주(카드주)",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "계좌(카드)번호",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "생년월일(사업자번호)",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "카드유효기간",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "자동(카드)이체일",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "청구서 수령 방법",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "E-mail(마스터)",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "전자 세금계산서 Site",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "세금계산서 E-mail",
+          "value": "",
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "id": "scenario-2",
+      "label": "3-3 · ART / 개인-대표자 / 비대면",
+      "templateId": "0ab7e9521f834f74a4dbfe936315cc19",
+      "fields": [
+        {
+          "id": "견적 유형",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "시스템 설정 코드",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "고객명",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "고객코드",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "우편번호",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "고객주소1",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "서비스제공처명",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "서비스제공처 형태",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "이름(마스터)",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "휴대전화번호(마스터)",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "서비스제공처주소1",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "서비스제공처주소2",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "서비스제공처주소3",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "견적번호",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "견적구분",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "견적상태",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "주장치코드",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "오퍼링",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "오퍼링_2",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "오퍼링_3",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "오퍼링_4",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "계약서종류",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "변경 후 계약기간",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "출동료",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "방범서비스(대인)",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "방범서비스(대물)",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "스페셜보험",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "정전안심",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "화재안심",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "이웃배상",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "매출안심",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "영상도난손해",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "풍수재보험",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "변경 후 월 서비스료",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "견적 설치비용",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "계약 설치비용",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "할인된 설치비용",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "유보금",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "설치 착수 예정일",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "서비스 개시 예정일",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "개인정보 수집 동의 (필수 항목)",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "마케팅 활용 동의",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "광고정보 수신 동의",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "제3자 제공 동의 (삼성화재)",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "제3자 제공 동의 (엘지유플러스)",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "제3자 제공 동의 확인",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "청구서 수령 방법",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "E-mail 주소",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "납입조건",
+          "value": "",
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "id": "scenario-3",
+      "label": "3-3 · ART / 개인-대표자 / 대면",
+      "templateId": "4c49689673784b75844a383a97795e02",
+      "fields": [
+        {
+          "id": "견적 유형",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "시스템 설정 코드",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "고객명",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "고객코드",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "우편번호",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "고객주소1",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "서비스제공처명",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "서비스제공처 형태",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "이름(마스터)",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "휴대전화번호(마스터)",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "서비스제공처주소1",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "서비스제공처주소2",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "서비스제공처주소3",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "견적번호",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "견적구분",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "견적상태",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "주장치코드",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "오퍼링",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "오퍼링_2",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "오퍼링_3",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "오퍼링_4",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "계약서종류",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "변경 후 계약기간",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "출동료",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "방범서비스(대인)",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "방범서비스(대물)",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "스페셜보험",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "정전안심",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "화재안심",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "이웃배상",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "매출안심",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "영상도난손해",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "풍수재보험",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "변경 후 월 서비스료",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "견적 설치비용",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "계약 설치비용",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "할인된 설치비용",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "유보금",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "설치 착수 예정일",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "서비스 개시 예정일",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "개인정보 수집 동의 (필수 항목)",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "마케팅 활용 동의",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "광고정보 수신 동의",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "제3자 제공 동의 (삼성화재)",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "제3자 제공 동의 (엘지유플러스)",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "제3자 제공 동의 확인",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "청구서 수령 방법",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "E-mail 주소",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "납입조건",
+          "value": "",
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "id": "scenario-4",
+      "label": "3-5 · RAM / 개인사업자-대표자 / 비대면",
+      "templateId": "741fcdd232bc4871a29f0e89452e3fad",
+      "fields": [
+        {
+          "id": "견적 유형",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "시스템 설정 코드",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "고객명",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "고객코드",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "우편번호",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "고객주소1",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "고객주소2",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "고객주소3",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "서비스제공처명",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "서비스제공처 형태",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "이름(마스터)",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "휴대전화번호(마스터)",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "서비스제공처우편번호",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "서비스제공처주소1",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "서비스제공처주소2",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "서비스제공처주소3",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "견적번호",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "견적구분",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "견적상태",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "주장치코드",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "오퍼링",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "카드매수",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "계약서종류",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "계약기간",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "출동료",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "월 서비스료",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "견적 설치비용",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "계약 설치비용",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "할인된 설치비용",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "기존 계약의 할인된 설치비용",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "설치 착수 예정일",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "서비스 개시 예정일",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "개인정보 수집 동의 (필수 항목)",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "마케팅 활용 동의",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "광고정보 수신 동의",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "제3자 제공 동의 (삼성화재)",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "제3자 제공 동의 (엘지유플러스)",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "제3자 제공 동의 확인",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "은행명(카드사)",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "예금주(카드주)",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "계좌(카드)번호",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "생년월일(사업자번호)",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "카드유효기간",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "자동(카드)이체일",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "청구서 수령 방법",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "E-mail 주소",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "전자 세금계산서 Site",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "세금계산서 E-mail",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "견적 유형2",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "시스템 설정 코드2",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "고객명2",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "고객코드2",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "우편번호2",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "고객주소12",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "고객주소22",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "고객주소32",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "서비스제공처명2",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "서비스제공처 형태2",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "이름(마스터)2",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "휴대전화번호(마스터)2",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "서비스제공처우편번호2",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "서비스제공처주소12",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "서비스제공처주소22",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "서비스제공처주소32",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "견적번호2",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "견적구분2",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "견적상태2",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "주장치코드2",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "오퍼링2",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "카드매수2",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "계약서종류2",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "계약기간2",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "대금 총액2",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "판매비2",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "설치비2",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "설치 완료 예정일2",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "안전 상품명2",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "수량2",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "비고2",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "개인정보 수집 동의 (필수 항목)2",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "마케팅 활용 동의2",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "광고정보 수신 동의2",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "제3자 제공 동의 (삼성화재)2",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "제3자 제공 동의 (엘지유플러스)2",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "제3자 제공 동의 확인2",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "은행명(카드사)2",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "예금주(카드주)2",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "계좌(카드)번호2",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "생년월일(사업자번호)2",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "카드유효기간2",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "자동(카드)이체일2",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "청구서 수령 방법2",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "E-mail 주소2",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "전자 세금계산서 Site2",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "세금계산서 E-mail2",
+          "value": "",
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "id": "scenario-5",
+      "label": "3-5 · MSA / 개인사업자-대표자 / 비대면",
+      "templateId": "9bac570e8ad84818b3f35be7fc30c274",
+      "fields": [
+        {
+          "id": "견적 유형",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "시스템 설정 코드",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "고객명",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "고객코드",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "우편번호",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "고객주소1",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "고객주소2",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "고객주소3",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "서비스제공처명",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "서비스제공처 형태",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "이름(마스터)",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "휴대전화번호(마스터)",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "서비스제공처우편번호",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "서비스제공처주소1",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "서비스제공처주소2",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "서비스제공처주소3",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "견적번호",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "견적구분",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "견적상태",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "주장치코드",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "오퍼링",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "카드매수",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "계약서종류",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "계약기간",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "출동료",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "월 서비스료",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "견적 설치비용",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "계약 설치비용",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "할인된 설치비용",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "기존 계약의 할인된 설치비용",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "설치 착수 예정일",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "서비스 개시 예정일",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "개인정보 수집 동의 (필수 항목)",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "마케팅 활용 동의",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "광고정보 수신 동의",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "제3자 제공 동의 (삼성화재)",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "제3자 제공 동의 (엘지유플러스)",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "제3자 제공 동의 확인",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "은행명(카드사)",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "예금주(카드주)",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "계좌(카드)번호",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "생년월일(사업자번호)",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "카드유효기간",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "자동(카드)이체일",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "청구서 수령 방법",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "E-mail 주소",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "전자 세금계산서 Site",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "세금계산서 E-mail",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "견적 유형2",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "시스템 설정 코드2",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "고객명2",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "고객코드2",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "우편번호2",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "고객주소12",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "고객주소22",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "고객주소32",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "서비스제공처명2",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "서비스제공처 형태2",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "이름(마스터)2",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "휴대전화번호(마스터)2",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "서비스제공처우편번호2",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "서비스제공처주소12",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "서비스제공처주소22",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "서비스제공처주소32",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "견적번호2",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "견적구분2",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "견적상태2",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "주장치코드2",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "오퍼링2",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "카드매수2",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "계약서종류2",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "계약기간2",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "대금 총액2",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "판매비2",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "설치비2",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "설치 완료 예정일2",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "안전 상품명2",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "수량2",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "비고2",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "개인정보 수집 동의 (필수 항목)2",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "마케팅 활용 동의2",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "광고정보 수신 동의2",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "제3자 제공 동의 (삼성화재)2",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "제3자 제공 동의 (엘지유플러스)2",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "제3자 제공 동의 확인2",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "은행명(카드사)2",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "예금주(카드주)2",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "계좌(카드)번호2",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "생년월일(사업자번호)2",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "카드유효기간2",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "자동(카드)이체일2",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "청구서 수령 방법2",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "E-mail 주소2",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "전자 세금계산서 Site2",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "세금계산서 E-mail2",
+          "value": "",
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "id": "scenario-6",
+      "label": "3-7 · APW / 개인-대표자 / 비대면",
+      "templateId": "558bd69ab88548b4a4b043b694c7afaa",
+      "fields": [
+        {
+          "id": "견적 유형",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "시스템 설정 코드",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "양도자명",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "양도자 이메일",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "양수자명",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "양수자 이메일",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "고객명",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "고객코드",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "우편번호",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "고객주소1",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "고객주소2",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "고객주소3",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "서비스제공처명",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "서비스제공처 형태",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "이름(마스터)",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "휴대전화번호(마스터)",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "서비스제공처주소1",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "서비스제공처주소2",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "서비스제공처주소3",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "업종",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "견적번호",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "견적구분",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "견적상태",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "주장치코드",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "오퍼링",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "오퍼링_2",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "오퍼링_3",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "오퍼링_4",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "오퍼링_5",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "카드 매수",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "계약서종류",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "계약기간",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "통신회선",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "출동료",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "방범서비스(대인)",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "방범서비스(대물)",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "스페셜보험",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "정전안심",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "화재안심",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "이웃배상",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "매출안심",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "영상도난손해",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "풍수재보험",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "월 서비스료",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "유보 설치비",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "개인정보 수집 동의 (필수 항목)",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "마케팅 활용 동의",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "광고정보 수신 동의",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "제3자 제공 동의 (삼성화재)",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "제3자 제공 동의 (엘지유플러스)",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "제3자 제공 동의 확인",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "청구방식(카드결제)",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "청구방식(자동이체)",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "은행명(카드사)",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "예금주(카드주)",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "계좌(카드)번호",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "생년월일(사업자번호)",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "카드유효기간",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "자동(카드)이체일",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "청구서 수령 방법",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "E-mail 주소",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "전자 세금계산서 Site",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "세금계산서 E-mail",
+          "value": "",
+          "enabled": true
+        },
+        {
+          "id": "납입조건",
+          "value": "",
+          "enabled": true
+        }
+      ]
+    }
+  ]
+}
