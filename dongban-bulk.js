@@ -46,7 +46,7 @@
           this.callbacks.success(data);
           break;
         case 'errorMessage':
-          this.callbacks.error();
+          this.callbacks.error(data.code);
           break;
         case 'setStorage':
           if (isToken(data.message?.access_token)) {
@@ -121,8 +121,8 @@
     session = current;
     showStatus('이폼사인 작성 화면을 준비하고 있습니다.');
 
-    if (window.location.protocol === 'file:') {
-      showStatus('로컬 파일로 열었습니다. 실제 작성 화면은 토큰 서버에서 허용한 웹 주소에서 열어 주세요.');
+    if (config.tokenEndpoint && window.location.protocol === 'file:') {
+      showStatus('토큰 서버를 사용하는 경우 해당 서버에서 허용한 웹 주소에서 열어 주세요.');
       return;
     }
 
@@ -159,7 +159,6 @@
 
       const iframe = document.createElement('iframe');
       iframe.title = '이폼사인 일괄작성';
-      iframe.referrerPolicy = 'strict-origin';
       current.frame = iframe;
       mount.append(iframe);
       new EformSignBulkDocument(iframe, {
@@ -189,11 +188,13 @@
             showStatus(succeeded > 0 ? `${succeeded}건의 전송 요청이 처리되었습니다.` : '전송 요청이 처리되었습니다.');
           }
         },
-        error() {
+        error(code) {
           clearTimeout(current.timeout);
           current.hasResult = true;
           current.completed = false;
-          showStatus('이폼사인에서 오류가 발생했습니다. 작성 화면의 안내를 확인해 주세요.');
+          showStatus(String(code) === '403'
+            ? '접근 권한을 확인해 주세요. 상단에서 이폼사인 계정을 전환한 뒤 다시 열 수 있습니다.'
+            : '이폼사인에서 오류가 발생했습니다. 작성 화면의 안내를 확인해 주세요.');
         }
       }, signal).open();
     } catch {
