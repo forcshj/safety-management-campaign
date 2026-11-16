@@ -29,43 +29,36 @@
     .note { margin-top: 20px; font-size: .875rem; color: #8996aa; }
     @media (max-width: 480px) { .card { padding: 38px 22px 30px; border-radius: 16px; } .mobile-option { flex-direction: column; text-align: center; } .qr { width: 132px; height: 132px; } }
     @media (prefers-reduced-motion: reduce) { .button { transition: none; } }
-    #bulk-open { border: 0; cursor: pointer; font-family: inherit; }
-    html:has(#bulk-dialog[open]) { overflow: hidden; }
-    #bulk-dialog {
+
+    html:has(#application-dialog[open]) { overflow: hidden; }
+    #application-dialog {
       width: min(96vw, 1600px); max-width: none;
       height: 92vh; height: 92dvh; max-height: none;
       padding: 0; border: 1px solid #e2e8f2; border-radius: 16px;
       background: #fff; color: #14213d; overflow: hidden;
       box-shadow: 0 18px 50px rgba(27, 55, 100, .24);
     }
-    #bulk-dialog[open] { display: flex; flex-direction: column; }
-    #bulk-dialog::backdrop { background: rgba(20, 33, 61, .60); }
-    .bulk-header {
+    #application-dialog[open] { display: flex; flex-direction: column; }
+    #application-dialog::backdrop { background: rgba(20, 33, 61, .60); }
+    .application-header {
       display: flex; align-items: center; justify-content: space-between; gap: 12px;
       padding: 10px 16px; border-bottom: 1px solid #e2e8f2;
     }
-    #bulk-title { margin: 0; font-size: 1.05rem; }
-    .bulk-controls { display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-end; gap: 8px 12px; }
-    .bulk-login { color: #174da9; font-size: .875rem; line-height: 1.4; }
-    .bulk-login:focus-visible { outline: 3px solid #255fc3; outline-offset: 3px; }
-    #bulk-close {
+    #application-title { margin: 0; font-size: 1.05rem; }
+    .application-controls { display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-end; gap: 8px 12px; }
+    .application-link { color: #174da9; font-size: .875rem; line-height: 1.4; }
+    .application-link:focus-visible { outline: 3px solid #255fc3; outline-offset: 3px; }
+    #application-close {
       min-width: 56px; min-height: 44px; padding: 0 12px; font: inherit;
       border: 1px solid #d6e0ef; border-radius: 8px;
       background: #f3f6fb; color: #14213d; cursor: pointer;
     }
-    #bulk-close:focus-visible { outline: 3px solid #255fc3; outline-offset: 2px; }
-    #bulk-status { margin: 0; padding: 10px 16px; background: #f3f6fb; color: #273753; }
-    #bulk-frame { flex: 1; min-height: 0; }
-    #bulk-frame iframe { display: block; width: 100%; height: 100%; border: 0; }
+    #application-close:focus-visible { outline: 3px solid #255fc3; outline-offset: 2px; }
+    #application-frame { flex: 1; min-height: 0; }
+    #application-frame iframe { display: block; width: 100%; height: 100%; border: 0; }
     @media (max-width: 640px) {
-      #bulk-dialog { width: 100vw; height: 100vh; height: 100dvh; border: 0; border-radius: 0; }
-      .bulk-header { padding-top: max(10px, env(safe-area-inset-top)); }
-    }
-    #bulk-dialog:not(:has(iframe)) {
-      width: min(calc(100vw - 32px), 480px);
-      height: auto;
-      border: 1px solid #e2e8f2;
-      border-radius: 16px;
+      #application-dialog { width: 100vw; height: 100vh; height: 100dvh; border: 0; border-radius: 0; }
+      .application-header { padding-top: max(10px, env(safe-area-inset-top)); }
     }
   </style>
 </head>
@@ -77,10 +70,10 @@
       </div>
       <h1 id="page-title">온라인 신청서</h1>
       <p>아래 버튼을 눌러 신청서를 작성해 주세요.</p>
-      <button class="button" id="bulk-open" type="button" aria-haspopup="dialog" aria-controls="bulk-dialog">
+      <a class="button" id="application-open" href="https://www.eformsign.com/?s=2TiGev" target="_blank" rel="noopener noreferrer">
         신청서 작성
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
-      </button>
+      </a>
       <div class="divider" aria-hidden="true">또는</div>
       <div class="mobile-option">
         <img class="qr" src="data:image/png;base64,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"alt="개인 디바이스에서 신청서를 열기 위한 QR 코드">
@@ -89,20 +82,47 @@
           <span>휴대폰 카메라로 QR 코드를 스캔하면 개인 디바이스에서 바로 작성할 수 있습니다.</span>
         </div>
       </div>
-      <div class="note">이폼사인 작성 화면이 팝업으로 열립니다.</div>
+      <div class="note">이폼사인 계정 없이 신청서를 작성할 수 있습니다.</div>
     </section>
   </main>
-  <dialog id="bulk-dialog" aria-labelledby="bulk-title">
-    <header class="bulk-header">
-      <h2 id="bulk-title">이폼사인 일괄작성</h2>
-      <div class="bulk-controls">
-        <a class="bulk-login" href="https://www.eformsign.com/" target="_blank" rel="noopener noreferrer">이폼사인 로그인 / 계정 전환 (새 탭)</a>
-        <button id="bulk-close" type="button" autofocus>닫기</button>
+  <dialog id="application-dialog" aria-labelledby="application-title">
+    <header class="application-header">
+      <h2 id="application-title">신청서 작성</h2>
+      <div class="application-controls">
+        <a class="application-link" id="application-external" target="_blank" rel="noopener noreferrer">신청서 새 탭에서 열기</a>
+        <button id="application-close" type="button" autofocus>닫기</button>
       </div>
     </header>
-    <p id="bulk-status" role="status" hidden></p>
-    <div id="bulk-frame"></div>
+    <div id="application-frame"></div>
   </dialog>
-  <script src="./dongban-bulk.js" defer></script>
+  <script>
+    (() => {
+      const open = document.querySelector('#application-open');
+      const dialog = document.querySelector('#application-dialog');
+      if (typeof dialog.showModal !== 'function') return;
+
+      const frame = document.querySelector('#application-frame');
+      const close = document.querySelector('#application-close');
+      document.querySelector('#application-external').href = open.href;
+      open.setAttribute('aria-haspopup', 'dialog');
+      open.setAttribute('aria-controls', dialog.id);
+
+      open.addEventListener('click', event => {
+        if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+        event.preventDefault();
+        dialog.showModal();
+        const iframe = document.createElement('iframe');
+        iframe.title = '이폼사인 신청서';
+        iframe.src = open.href;
+        frame.replaceChildren(iframe);
+      });
+
+      close.addEventListener('click', () => dialog.close());
+      dialog.addEventListener('close', () => {
+        frame.replaceChildren();
+        open.focus();
+      });
+    })();
+  </script>
 </body>
 </html>
