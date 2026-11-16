@@ -1,4 +1,6 @@
-// Node.js 20+ / Express. Mount on the authenticated API server.
+// Node.js 20+ / Express. Use with an eformsign Signature API key.
+import { createPrivateKey, sign } from 'node:crypto';
+
 const tokenUrl = 'https://api.eformsign.com/v2.0/api_auth/access_token';
 const pageOrigin = 'https://forcshj.github.io';
 const path = '/api/eformsign/bulk-token';
@@ -9,8 +11,16 @@ export function mountEformsignBulkTokenRoute(app, { resolveMemberId, rateLimit }
   }
 
   const apiKey = process.env.EFORMSIGN_API_KEY;
-  const secretKey = process.env.EFORMSIGN_SECRET_KEY;
-  if (!apiKey || !secretKey) throw new Error('Configure eformsign credentials on the server');
+  const secretKey = process.env.EFORMSIGN_SECRET_KEY?.trim();
+  if (!apiKey || !secretKey || !/^(?:[a-f0-9]{2})+$/i.test(secretKey)) {
+    throw new Error('Configure the eformsign API key and hex signing key on the server');
+  }
+  const privateKey = createPrivateKey({
+    key: Buffer.from(secretKey, 'hex'),
+    format: 'der',
+    type: 'pkcs8'
+  });
+  if (privateKey.asymmetricKeyType !== 'ec') throw new Error('Expected an EC signing key');
 
   function cors(req, res, next) {
     res.vary('Origin');
@@ -35,6 +45,9 @@ export function mountEformsignBulkTokenRoute(app, { resolveMemberId, rateLimit }
       const memberId = await resolveMemberId(req);
       if (typeof memberId !== 'string' || !memberId.trim()) return res.status(403).end();
 
+      const executionTime = Date.now();
+      const signature = sign('sha256', Buffer.from(String(executionTime), 'utf8'), privateKey)
+        .toString('hex');
       const upstream = await fetch(tokenUrl, {
         method: 'POST',
         redirect: 'error',
@@ -42,9 +55,9 @@ export function mountEformsignBulkTokenRoute(app, { resolveMemberId, rateLimit }
         headers: {
           'Content-Type': 'application/json',
           Authorization: `Bearer ${Buffer.from(apiKey, 'utf8').toString('base64')}`,
-          eformsign_signature: `Bearer ${secretKey}`
+          eformsign_signature: signature
         },
-        body: JSON.stringify({ execution_time: Date.now(), member_id: memberId })
+        body: JSON.stringify({ execution_time: executionTime, member_id: memberId })
       });
       if (!upstream.ok) return res.status(502).end();
       const { oauth_token: tokens } = await upstream.json();
