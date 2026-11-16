@@ -4,7 +4,7 @@
   const config = Object.freeze({
     companyId: 'ebdc0d5260994120ba4caaa6b085aac4',
     templateId: 'a17c6dc225ba4ae88a29a7564e3f3800',
-    tokenEndpoint: 'https://YOUR_TOKEN_SERVER.example/api/eformsign/bulk-token'
+    tokenEndpoint: 'https://www.eformsign.com/api/eformsign/bulk-token'
   });
   const origin = 'https://www.eformsign.com';
   const mode = 'EMBEDDING_BULKDOCUMENT';
