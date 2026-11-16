@@ -4,7 +4,7 @@
   const config = Object.freeze({
     companyId: 'ebdc0d5260994120ba4caaa6b085aac4',
     templateId: 'a17c6dc225ba4ae88a29a7564e3f3800',
-    tokenEndpoint: '' // 설정하면 토큰 인증을 사용하는 iframe을 엽니다.
+    tokenEndpoint: '' // 캠페인 토큰 발급 서버의 HTTPS 주소
   });
   const origin = 'https://www.eformsign.com';
   const mode = 'EMBEDDING_BULKDOCUMENT';
@@ -82,13 +82,8 @@
   }
 
   const trigger = document.querySelector('#bulk-open');
-  if (!config.tokenEndpoint) return;
-
   const dialog = document.querySelector('#bulk-dialog');
   if (typeof dialog.showModal !== 'function') return;
-  trigger.setAttribute('aria-haspopup', 'dialog');
-  trigger.setAttribute('aria-controls', 'bulk-dialog');
-  document.querySelector('.note').textContent = '이폼사인 일괄작성 화면이 팝업으로 열립니다.';
   const closeButton = document.querySelector('#bulk-close');
   const status = document.querySelector('#bulk-status');
   const mount = document.querySelector('#bulk-frame');
@@ -120,15 +115,20 @@
     closeModal();
   });
 
-  trigger.addEventListener('click', async event => {
-    if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey ||
-        window.location.protocol === 'file:') return;
-    event.preventDefault();
+  trigger.addEventListener('click', async () => {
     if (dialog.open) return;
     dialog.showModal();
     const current = { controller: new AbortController() };
     session = current;
-    showStatus('이폼사인 작성 화면을 준비하고 있습니다.');
+    if (!config.tokenEndpoint) {
+      showStatus('일괄작성을 열려면 토큰 발급 서버 주소를 설정해야 합니다.');
+      return;
+    }
+    if (window.location.protocol === 'file:') {
+      showStatus('토큰 발급 서버에서 허용한 HTTPS 캠페인 주소에서 열어 주세요.');
+      return;
+    }
+    showStatus('이폼사인 일괄작성 화면을 준비하고 있습니다.');
 
     const { signal } = current.controller;
     try {
