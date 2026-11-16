@@ -146,11 +146,14 @@
           body: '{}',
           signal
         });
-        if (response.status === 401 || response.status === 403) {
-          showStatus('신청서 작성 권한이 있는 계정으로 로그인한 후 다시 열어 주세요.');
+          if (response.status === 401 || response.status === 403) {
+            showStatus('캠페인 토큰 서버에서 작성 권한을 확인하지 못했습니다. 캠페인 계정으로 로그인한 뒤 다시 열어 주세요.');
           return;
         }
-        if (!response.ok) throw new Error('Token request failed');
+          if (!response.ok) {
+            showStatus(`캠페인 토큰 서버가 오류를 반환했습니다 (HTTP ${response.status}).`);
+            return;
+          }
         tokens = await response.json();
         if (session !== current || signal.aborted) return;
         if (typeof tokens.member_id !== 'string' || !tokens.member_id.trim() ||
@@ -193,7 +196,7 @@
           current.hasResult = true;
           current.completed = false;
           showStatus(String(code) === '403'
-            ? '접근 권한을 확인해 주세요. 상단에서 이폼사인 계정을 전환한 뒤 다시 열 수 있습니다.'
+            ? '이폼사인에서 접근을 거부했습니다 (403). 상단에서 이폼사인 계정을 전환한 뒤 다시 열 수 있습니다.'
             : '이폼사인에서 오류가 발생했습니다. 작성 화면의 안내를 확인해 주세요.');
         }
       }, signal).open();
@@ -203,7 +206,7 @@
       clearTimeout(current.timeout);
       if (session === current && current.frame && !signal.aborted) {
         current.timeout = setTimeout(() => {
-          showStatus('이폼사인 화면의 응답이 지연되고 있습니다. 화면이 열리지 않으면 창을 닫고 다시 시도해 주세요.');
+          showStatus('이폼사인 화면에서 초기화 요청을 받지 못했습니다. 화면에 오류가 표시되면 해당 요청의 상태를 확인해 주세요.');
         }, 20000);
       }
     }
