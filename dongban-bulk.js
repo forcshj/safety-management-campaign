@@ -4,7 +4,7 @@
   const config = Object.freeze({
     companyId: 'ebdc0d5260994120ba4caaa6b085aac4',
     templateId: 'a17c6dc225ba4ae88a29a7564e3f3800',
-    tokenEndpoint: '' // 비워 두면 이폼사인 로그인 사용
+    tokenEndpoint: '' // 설정하면 토큰 인증을 사용하는 iframe을 엽니다.
   });
   const origin = 'https://www.eformsign.com';
   const mode = 'EMBEDDING_BULKDOCUMENT';
@@ -82,7 +82,13 @@
   }
 
   const trigger = document.querySelector('#bulk-open');
+  if (!config.tokenEndpoint) return;
+
   const dialog = document.querySelector('#bulk-dialog');
+  if (typeof dialog.showModal !== 'function') return;
+  trigger.setAttribute('aria-haspopup', 'dialog');
+  trigger.setAttribute('aria-controls', 'bulk-dialog');
+  document.querySelector('.note').textContent = '이폼사인 일괄작성 화면이 팝업으로 열립니다.';
   const closeButton = document.querySelector('#bulk-close');
   const status = document.querySelector('#bulk-status');
   const mount = document.querySelector('#bulk-frame');
@@ -114,51 +120,46 @@
     closeModal();
   });
 
-  trigger.addEventListener('click', async () => {
+  trigger.addEventListener('click', async event => {
+    if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey ||
+        window.location.protocol === 'file:') return;
+    event.preventDefault();
     if (dialog.open) return;
     dialog.showModal();
     const current = { controller: new AbortController() };
     session = current;
     showStatus('이폼사인 작성 화면을 준비하고 있습니다.');
 
-    if (config.tokenEndpoint && window.location.protocol === 'file:') {
-      showStatus('토큰 서버를 사용하는 경우 해당 서버에서 허용한 웹 주소에서 열어 주세요.');
-      return;
-    }
-
     const { signal } = current.controller;
     try {
-      let tokens = {};
-      if (config.tokenEndpoint) {
-        const endpoint = new URL(config.tokenEndpoint);
-        if (endpoint.protocol !== 'https:') throw new Error('HTTPS required');
-        if (/(^|\.)eformsign\.com$/.test(endpoint.hostname)) {
-          showStatus('토큰 발급 주소에는 이폼사인 API 대신 캠페인 토큰 서버의 주소를 입력해 주세요.');
-          return;
-        }
-        current.timeout = setTimeout(() => current.controller.abort(), 15000);
-        const response = await fetch(endpoint, {
-          method: 'POST',
-          credentials: 'include',
-          cache: 'no-store',
-          redirect: 'error',
-          headers: { 'Content-Type': 'application/json' },
-          body: '{}',
-          signal
-        });
-          if (response.status === 401 || response.status === 403) {
-            showStatus('캠페인 토큰 서버에서 작성 권한을 확인하지 못했습니다. 캠페인 계정으로 로그인한 뒤 다시 열어 주세요.');
-          return;
-        }
-          if (!response.ok) {
-            showStatus(`캠페인 토큰 서버가 오류를 반환했습니다 (HTTP ${response.status}).`);
-            return;
-          }
-        tokens = await response.json();
-        if (session !== current || signal.aborted) return;
-        if (typeof tokens.member_id !== 'string' || !tokens.member_id.trim() ||
-            !isToken(tokens.access_token)) throw new Error('Invalid token response');
+      const endpoint = new URL(config.tokenEndpoint);
+      if (endpoint.protocol !== 'https:') throw new Error('HTTPS required');
+      if (/(^|\.)eformsign\.com$/.test(endpoint.hostname)) {
+        showStatus('토큰 발급 주소에는 이폼사인 API 대신 캠페인 토큰 서버의 주소를 입력해 주세요.');
+        return;
       }
+      current.timeout = setTimeout(() => current.controller.abort(), 15000);
+      const response = await fetch(endpoint, {
+        method: 'POST',
+        credentials: 'include',
+        cache: 'no-store',
+        redirect: 'error',
+        headers: { 'Content-Type': 'application/json' },
+        body: '{}',
+        signal
+      });
+        if (response.status === 401 || response.status === 403) {
+          showStatus('캠페인 토큰 서버에서 작성 권한을 확인하지 못했습니다. 캠페인 계정으로 로그인한 뒤 다시 열어 주세요.');
+        return;
+      }
+        if (!response.ok) {
+          showStatus(`캠페인 토큰 서버가 오류를 반환했습니다 (HTTP ${response.status}).`);
+          return;
+        }
+      const tokens = await response.json();
+      if (session !== current || signal.aborted) return;
+      if (typeof tokens.member_id !== 'string' || !tokens.member_id.trim() ||
+          !isToken(tokens.access_token)) throw new Error('Invalid token response');
 
       const iframe = document.createElement('iframe');
       iframe.title = '이폼사인 일괄작성';
@@ -166,8 +167,8 @@
       mount.append(iframe);
       new EformSignBulkDocument(iframe, {
         ...config,
-        memberId: tokens.member_id ?? '',
-        accessToken: tokens.access_token ?? '',
+        memberId: tokens.member_id,
+        accessToken: tokens.access_token,
         refreshToken: isToken(tokens.refresh_token) ? tokens.refresh_token : ''
       }, {
         ready() {
