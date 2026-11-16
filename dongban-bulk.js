@@ -2,8 +2,8 @@
   'use strict';
 
   const config = Object.freeze({
-    companyId: 'YOUR_COMPANY_ID',
-    templateId: 'YOUR_TEMPLATE_ID',
+    companyId: 'ebdc0d5260994120ba4caaa6b085aac4',
+    templateId: 'a17c6dc225ba4ae88a29a7564e3f3800',
     tokenEndpoint: 'https://YOUR_TOKEN_SERVER.example/api/eformsign/bulk-token'
   });
   const origin = 'https://www.eformsign.com';
