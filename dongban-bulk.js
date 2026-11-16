@@ -4,7 +4,7 @@
   const config = Object.freeze({
     companyId: 'ebdc0d5260994120ba4caaa6b085aac4',
     templateId: 'a17c6dc225ba4ae88a29a7564e3f3800',
-    tokenEndpoint: 'https://www.eformsign.com/api/eformsign/bulk-token'
+    tokenEndpoint: '' // 비워 두면 이폼사인 로그인 사용
   });
   const origin = 'https://www.eformsign.com';
   const mode = 'EMBEDDING_BULKDOCUMENT';
@@ -121,36 +121,41 @@
     session = current;
     showStatus('이폼사인 작성 화면을 준비하고 있습니다.');
 
-    if (config.companyId.startsWith('YOUR_') || config.templateId.startsWith('YOUR_') ||
-        config.tokenEndpoint.includes('YOUR_')) {
-      showStatus('신청서 작성 연동을 준비 중입니다.');
+    if (window.location.protocol === 'file:') {
+      showStatus('로컬 파일로 열었습니다. 실제 작성 화면은 토큰 서버에서 허용한 웹 주소에서 열어 주세요.');
       return;
     }
 
     const { signal } = current.controller;
     try {
-      const endpoint = new URL(config.tokenEndpoint);
-      if (endpoint.protocol !== 'https:') throw new Error('HTTPS required');
-
-      current.timeout = setTimeout(() => current.controller.abort(), 15000);
-      const response = await fetch(endpoint, {
-        method: 'POST',
-        credentials: 'include',
-        cache: 'no-store',
-        redirect: 'error',
-        headers: { 'Content-Type': 'application/json' },
-        body: '{}',
-        signal
-      });
-      if (response.status === 401 || response.status === 403) {
-        showStatus('신청서 작성 권한이 있는 계정으로 로그인한 후 다시 열어 주세요.');
-        return;
+      let tokens = {};
+      if (config.tokenEndpoint) {
+        const endpoint = new URL(config.tokenEndpoint);
+        if (endpoint.protocol !== 'https:') throw new Error('HTTPS required');
+        if (/(^|\.)eformsign\.com$/.test(endpoint.hostname)) {
+          showStatus('토큰 발급 주소에는 이폼사인 API 대신 캠페인 토큰 서버의 주소를 입력해 주세요.');
+          return;
+        }
+        current.timeout = setTimeout(() => current.controller.abort(), 15000);
+        const response = await fetch(endpoint, {
+          method: 'POST',
+          credentials: 'include',
+          cache: 'no-store',
+          redirect: 'error',
+          headers: { 'Content-Type': 'application/json' },
+          body: '{}',
+          signal
+        });
+        if (response.status === 401 || response.status === 403) {
+          showStatus('신청서 작성 권한이 있는 계정으로 로그인한 후 다시 열어 주세요.');
+          return;
+        }
+        if (!response.ok) throw new Error('Token request failed');
+        tokens = await response.json();
+        if (session !== current || signal.aborted) return;
+        if (typeof tokens.member_id !== 'string' || !tokens.member_id.trim() ||
+            !isToken(tokens.access_token)) throw new Error('Invalid token response');
       }
-      if (!response.ok) throw new Error('Token request failed');
-      const tokens = await response.json();
-      if (session !== current || signal.aborted) return;
-      if (typeof tokens.member_id !== 'string' || !tokens.member_id.trim() ||
-          !isToken(tokens.access_token)) throw new Error('Invalid token response');
 
       const iframe = document.createElement('iframe');
       iframe.title = '이폼사인 일괄작성';
@@ -159,8 +164,8 @@
       mount.append(iframe);
       new EformSignBulkDocument(iframe, {
         ...config,
-        memberId: tokens.member_id,
-        accessToken: tokens.access_token,
+        memberId: tokens.member_id ?? '',
+        accessToken: tokens.access_token ?? '',
         refreshToken: isToken(tokens.refresh_token) ? tokens.refresh_token : ''
       }, {
         ready() {
